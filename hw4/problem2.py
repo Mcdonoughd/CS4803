@@ -21,7 +21,7 @@ def compute_C(X):
 
     #########################################
     ## INSERT YOUR CODE HERE
-    C = np.cov(X.T, ddof=None)
+    C = np.cov(X.T)
     #print C
     #########################################
     return C
