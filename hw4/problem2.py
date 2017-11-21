@@ -50,20 +50,24 @@ def PCA(X, d=1):
     C = compute_C(X)
     #print C
     eig_vals, eig_vecs = np.linalg.eigh(C)
+    #print eig_vals
+    #print eig_vecs
     # Make a list of (eigenvalue, eigenvector) tuples
     eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:, i]) for i in range(len(eig_vals))]
     # Sort the (eigenvalue, eigenvector) tuples from high to low
+    #print eig_pairs
     eig_pairs.sort(key=lambda x: x[0], reverse=True)
+    #print eig_pairs
     #print X.shape[1]
-    matrix_w = (np.zeros(shape=(X.shape[1],d)))
+    P = (np.zeros(shape=(X.shape[1], d)))
     #print matrix_w
     for i in range(d):
         for j in range(X.shape[1]):
-            matrix_w[j][i] = eig_pairs[i][1][j]
-    print matrix_w
-    P = matrix_w
+            P[j][i] = eig_pairs[i][1][j]
+    #print P
+
     Xp = np.dot(X,P)
-    print Xp
+    #print Xp
     #Xp = 0
     #########################################
     return Xp, P

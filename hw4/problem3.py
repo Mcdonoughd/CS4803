@@ -89,12 +89,15 @@ def olivetti_eigen_faces(K=20):
     Xc, _ = centering_X(X)
     Xp, W = PCA(Xc, K)
     # W.shape = (64, 64, 20)
-    print W
+    #print W
+
     W = W.swapaxes(0,1)
-    print W
+    #print W
+
     W.shape = (20, 64, 64)
     #W = W.T
-
+    #print Xp
     #W.shape = (20, 64, 64)
+
     #########################################
     return W, Xp
