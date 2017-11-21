@@ -21,7 +21,7 @@ def compute_C(X):
 
     #########################################
     ## INSERT YOUR CODE HERE
-    C = np.cov(X.T, ddof=0)
+    C = np.cov(X.T, ddof=None)
     #print C
     #########################################
     return C
@@ -49,7 +49,7 @@ def PCA(X, d=1):
 
     C = compute_C(X)
     #print C
-    eig_vals, eig_vecs = np.linalg.eig(C)
+    eig_vals, eig_vecs = np.linalg.eigh(C)
     # Make a list of (eigenvalue, eigenvector) tuples
     eig_pairs = [(np.abs(eig_vals[i]), eig_vecs[:, i]) for i in range(len(eig_vals))]
     # Sort the (eigenvalue, eigenvector) tuples from high to low

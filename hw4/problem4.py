@@ -51,8 +51,6 @@ def face_recogition(X, q):
     ids = np.argsort(d)
     # print type(ids)
 
-    print d
-    print ids
 
     #########################################
     return ids
@@ -73,8 +71,8 @@ def face_recogition_olivetti(qid):
     X = np.load('face_pca.npy')
     #########################################
     ## INSERT YOUR CODE HERE
-    ids = face_recogition(X, qid)
-    # print ids
+    ids = face_recogition(-X, qid)
+    print ids.T
 
 
     #########################################

@@ -86,9 +86,8 @@ def olivetti_eigen_faces(K=20):
     ## INSERT YOUR CODE HERE
 
     X, _, _ = load_dataset()
-
-    Xc, W = PCA(X, K)
-    Xp, _ = centering_X(Xc)
+    Xc, _ = centering_X(X)
+    Xp, W = PCA(Xc, K)
     #W.shape = (64, 64, 20)
     #print Xp
 
