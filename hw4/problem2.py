@@ -60,9 +60,10 @@ def PCA(X, d=1):
     for i in range(d):
         for j in range(X.shape[1]):
             matrix_w[j][i] = eig_pairs[i][1][j]
-    #print matrix_w
+    print matrix_w
     P = matrix_w
     Xp = np.dot(X,P)
-    #print Xp
+    print Xp
+    #Xp = 0
     #########################################
     return Xp, P

@@ -61,7 +61,7 @@ def centering_X(X):
     ## INSERT YOUR CODE HERE
     mu = X.mean(axis=0)
     # print mu.shape
-    #print mu
+    # print mu
     X -= mu
     mu.shape = (64, 64)
     Xc = X
@@ -88,11 +88,13 @@ def olivetti_eigen_faces(K=20):
     X, _, _ = load_dataset()
     Xc, _ = centering_X(X)
     Xp, W = PCA(Xc, K)
-    #W.shape = (64, 64, 20)
-    #print Xp
+    # W.shape = (64, 64, 20)
+    print W
+    W = W.swapaxes(0,1)
+    print W
+    W.shape = (20, 64, 64)
+    #W = W.T
 
-    W = W.T
-
-    W.shape = (20,64,64)
+    #W.shape = (20, 64, 64)
     #########################################
     return W, Xp

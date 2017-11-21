@@ -72,8 +72,8 @@ def face_recogition_olivetti(qid):
     #########################################
     ## INSERT YOUR CODE HERE
     ids = face_recogition(-X, qid)
-    print ids.T
-
+    print ids
+    print ids[0]
 
     #########################################
     return ids

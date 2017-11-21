@@ -53,7 +53,7 @@ def test_face_recogition():
 def test_face_recogition_olivetti():
     ''' test the correctness of face_recogition_olivetti() function in problem4.py'''
     #-------------------------------
-    qid = 7*10  # use the first image as the query image
+    qid = 70  # use the first image as the query image
 
     # call the function
     ids =face_recogition_olivetti(qid)
